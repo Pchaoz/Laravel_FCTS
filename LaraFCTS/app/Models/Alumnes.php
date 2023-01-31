@@ -12,5 +12,8 @@ class Alumnes extends Model
     protected $primaryKey = 'IdAlumne';
     protected $fillable=['IdAlumne','NomAlumne','CognomAlumne','DNI','Curs','Cicle','Telefon','Correu','IdTutor','IsPractiques','RutaCurriculum'];
 
-    
+    public function estudis(){
+        return $this->BelongsTo(Estudis::class,'IdEstudi','Cicle');
+    }
+
 }
