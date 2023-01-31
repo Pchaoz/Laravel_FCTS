@@ -11,4 +11,8 @@ class Empreses extends Model
     protected $table = "Empresas";
     protected $primaryKey = "idEmpresa";
     protected $fillable = ["idEmpresa", 'nom', 'adreça', 'telefon', 'correu'];
+
+    public function ofertes(){
+        return $this->hasMany(Ofertes::class);
+    }
 }
