@@ -26,8 +26,14 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Models\\Alumnes' => $baseDir . '/app/Models/Alumnes.php',
     'App\\Models\\Empreses' => $baseDir . '/app/Models/Empreses.php',
+    'App\\Models\\Enviaments' => $baseDir . '/app/Models/Enviaments.php',
     'App\\Models\\Estudis' => $baseDir . '/app/Models/Estudis.php',
+<<<<<<< Updated upstream
+=======
+    'App\\Models\\Ofertes' => $baseDir . '/app/Models/Ofertes.php',
+>>>>>>> Stashed changes
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
@@ -145,8 +151,12 @@ return array(
     'Cron\\MinutesField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
+    'Database\\Seeders\\AlumnesSeeder' => $baseDir . '/database/seeders/AlumnesSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\EmpresesSeeder' => $baseDir . '/database/seeders/EmpresesSeeder.php',
+    'Database\\Seeders\\EstudisSeeder' => $baseDir . '/database/seeders/EstudisSeeder.php',
+    'Database\\Seeders\\OfertesSeeder' => $baseDir . '/database/seeders/OfertesSeeder.php',
+    'Database\\Seeders\\UsersSeeder' => $baseDir . '/database/seeders/UsersSeeder.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
     'DeepCopy\\Exception\\CloneException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
     'DeepCopy\\Exception\\PropertyException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
