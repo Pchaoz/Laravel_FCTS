@@ -14,6 +14,6 @@ class EstudisSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('empreses', function (Blueprint $table) {
             $table->bigIncrements('idEmpresa');
             $table->string('nom', 15);
-            $table->string('adreça', 60);
+            $table->string('adreça', 200);
             $table->string('telefon', 15);
             $table->string('correu',60);
             $table->timestamps();
