@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Empreses extends Model
 {
     use HasFactory;
-    protected $table = "Empresas";
+    protected $table = "Empreses";
     protected $primaryKey = "idEmpresa";
     protected $fillable = ["idEmpresa", 'nom', 'adreça', 'telefon', 'correu'];
+
+    public function ofertes(){
+        return $this->hasMany(Ofertes::class);
+    }
 }
