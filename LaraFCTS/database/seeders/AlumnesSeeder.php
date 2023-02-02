@@ -23,6 +23,9 @@ class AlumnesSeeder extends Seeder
             "Curs"=>"2",
             "Telefon"=>"69696969",
             "Correu"=>"supervivientedamvi@jodermail.com",
+            "idTutor"=>1,
+            "Cicle"=>1,
+            "IsPractiques"=>true,
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
             ]);
 
@@ -33,6 +36,9 @@ class AlumnesSeeder extends Seeder
             "Curs"=>"2",
             "Telefon"=>"891258128",
             "Correu"=>"raulmartincaro@gmaispuntocon.com",
+            "idTutor"=>1,
+            "Cicle"=>2,
+            "IsPractiques"=>false,
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -43,6 +49,9 @@ class AlumnesSeeder extends Seeder
             "Curs"=>"2",
             "Telefon"=>"5817215912",
             "Correu"=>"polsotillos@gmail.com",
+            "idTutor"=>1,
+            "Cicle"=>3,
+            "IsPractiques"=>true,
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -53,6 +62,9 @@ class AlumnesSeeder extends Seeder
             "Curs"=>"2",
             "Telefon"=>"33333333",
             "Correu"=>"eldeasix@gmail.com",
+            "idTutor"=>1,
+            "Cicle"=>4,
+            "IsPractiques"=>true,
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
