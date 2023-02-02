@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ofertes extends Model
 {
     use HasFactory;
-    protected $table = "idOferta";
+    protected $table = "ofertes";
     protected $primaryKey = "idOferta";
     protected $fillable = ["idOferta", 'descripcio', 'idEmpresa', 'vacants', 'idCicle', 'curs', 'nomContacte', 'cognomsContacte', 'correuContacte'];
 
