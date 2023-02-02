@@ -30,10 +30,8 @@ return array(
     'App\\Models\\Empreses' => $baseDir . '/app/Models/Empreses.php',
     'App\\Models\\Enviaments' => $baseDir . '/app/Models/Enviaments.php',
     'App\\Models\\Estudis' => $baseDir . '/app/Models/Estudis.php',
-<<<<<<< Updated upstream
-=======
     'App\\Models\\Ofertes' => $baseDir . '/app/Models/Ofertes.php',
->>>>>>> Stashed changes
+    'App\\Models\\Alumnes' => $baseDir . '/app/Models/Alumnes.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

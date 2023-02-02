@@ -17,4 +17,8 @@ class Alumnes extends Model
     }
 
 
+    public function estudis(){
+        return $this->BelongsTo(Estudis::class,'IdEstudi','Cicle');
+    }
+
 }

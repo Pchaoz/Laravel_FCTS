@@ -533,10 +533,8 @@ class ComposerStaticInitdd23104db3d1cd43142a5878b5ce87c4
         'App\\Models\\Empreses' => __DIR__ . '/../..' . '/app/Models/Empreses.php',
         'App\\Models\\Enviaments' => __DIR__ . '/../..' . '/app/Models/Enviaments.php',
         'App\\Models\\Estudis' => __DIR__ . '/../..' . '/app/Models/Estudis.php',
-<<<<<<< Updated upstream
-=======
         'App\\Models\\Ofertes' => __DIR__ . '/../..' . '/app/Models/Ofertes.php',
->>>>>>> Stashed changes
+        'App\\Models\\Alumnes' => __DIR__ . '/../..' . '/app/Models/Alumnes.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

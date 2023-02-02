@@ -13,5 +13,9 @@ class Estudis extends Model
     protected $primaryKey="idEstudi";
     protected  $fillable =["idEstudi","nom"];
 
+    public function alumnes(){
+        return $this->hasMany(Alumnes::class);
+    }
+
 
 }

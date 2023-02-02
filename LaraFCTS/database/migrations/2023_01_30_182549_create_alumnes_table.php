@@ -13,17 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empreses', function (Blueprint $table) {
-            $table->bigIncrements('idEmpresa');
-            $table->string('nom', 15);
-            $table->string('adreça', 200);
-            $table->string('telefon', 15);
-            $table->string('correu',60);
+        Schema::create('alumnes', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empreses');
+        Schema::dropIfExists('alumnes');
     }
 };
