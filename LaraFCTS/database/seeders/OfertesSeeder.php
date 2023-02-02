@@ -17,7 +17,7 @@ class OfertesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("ofertes")->insert([
+        /*DB::table("ofertes")->insert([
             "descripcio"=>"Oferta 1 prueba",
             "idEmpresa"=>"1",
             "vacants"=>"1",
@@ -38,6 +38,6 @@ class OfertesSeeder extends Seeder
             "cognomsContacte"=>"Santiago Gonzalez",
             "correuContacte"=>"RobertoSG@carpediem.net",
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
-        ]);
+        ]);*/
     }
 }
