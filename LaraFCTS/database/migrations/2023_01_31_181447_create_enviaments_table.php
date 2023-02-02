@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('enviaments', function (Blueprint $table) {
             $table->bigIncrements("idEnviaments");
             $table->string("estat",30);
             $table->foreignId('idAlumne')->nullable()->constrained('alumnes')->references('idAlumne');
-            $table->foreignId('idOferta')->nullable()->constrained('ofertes')->references('idOferta');
+            $table->foreignId('idOfe')->nullable()->constrained('ofertes')->references('idOfe');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -32,8 +34,8 @@ return new class extends Migration
         Schema::table('enviaments', function (Blueprint $table) {
             $table->dropForeign(['enviaments_idAlumne_foreign']);
             $table->dropColumn('idAlumne');
-            $table->dropForeign(['enviaments_idOferta_foreign']);
-            $table->dropColumn('idOferta');
+           $table->dropForeign(['ofertes_idOfe_foreign']);
+            $table->dropColumn('idOfe');
         });
         Schema::dropIfExists('enviaments');
     }

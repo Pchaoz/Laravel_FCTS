@@ -21,6 +21,9 @@ return new class extends Migration
             $table->integer('Curs');
             $table->string('Telefon',12);
             $table->string('Correu',40);
+            $table->boolean('IsPractiques')->nullable();
+            $table->integer('idTutor')->nullable()->constrained('user')->references('id');
+            $table->integer('Cicle')->nullable()->constrained('estudis')->references('idEstudi');
             $table->timestamps();
 
 
