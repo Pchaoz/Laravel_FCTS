@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('ofertes', function (Blueprint $table) {
             $table->increments('idOfe');
-            /*$table->string('descripcio', 50);
-            $table->integer('vacants', 2);
+            $table->string('descripcio', 50);
+            $table->integer('vacants');
             $table->string('curs',10);
-            $table->string('nomContatcte',20);
+            $table->string('nomContacte',20);
             $table->string('cognomsContacte',40);
             $table->string('correuContacte',40);
             $table->foreignId('idEmpresa')->nullable()->constrained('empreses')->references('idEmpresa');
-            $table->foreignId('idCicle')->nullable()->constrained('estudis')->references('idEstudi');*/
+            $table->foreignId('idCicle')->nullable()->constrained('estudis')->references('idEstudi');
             $table->timestamps();
 
         });
