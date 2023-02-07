@@ -319,8 +319,8 @@ class ComposerStaticInit8af3ce6006eead3d4abdbaba3768939d
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -512,6 +512,11 @@ class ComposerStaticInit8af3ce6006eead3d4abdbaba3768939d
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Alumnes' => __DIR__ . '/../..' . '/app/Models/Alumnes.php',
+        'App\\Models\\Empreses' => __DIR__ . '/../..' . '/app/Models/Empreses.php',
+        'App\\Models\\Enviaments' => __DIR__ . '/../..' . '/app/Models/Enviaments.php',
+        'App\\Models\\Estudis' => __DIR__ . '/../..' . '/app/Models/Estudis.php',
+        'App\\Models\\Ofertes' => __DIR__ . '/../..' . '/app/Models/Ofertes.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -631,7 +636,11 @@ class ComposerStaticInit8af3ce6006eead3d4abdbaba3768939d
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\AlumnesSeeder' => __DIR__ . '/../..' . '/database/seeders/AlumnesSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\EmpresesSeeder' => __DIR__ . '/../..' . '/database/seeders/EmpresesSeeder.php',
+        'Database\\Seeders\\EstudisSeeder' => __DIR__ . '/../..' . '/database/seeders/EstudisSeeder.php',
+        'Database\\Seeders\\OfertesSeeder' => __DIR__ . '/../..' . '/database/seeders/OfertesSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
