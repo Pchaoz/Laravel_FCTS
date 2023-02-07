@@ -9,7 +9,7 @@ class Enviaments extends Model
 {
     use HasFactory;
     protected  $table="enviaments";
-    protected $primaryKey="idEnviaments";
+    protected  $primaryKey="idEnviaments";
     protected  $fillable =["idEnviaments","estat"];
 
 
