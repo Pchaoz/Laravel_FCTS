@@ -21,4 +21,7 @@ class Alumnes extends Model
         return $this->BelongsTo(Estudis::class,'IdEstudi','Cicle');
     }
 
+    public function enviaments(){
+        return $this->belongsToMany(Enviaments::class,"enviaments","idEnviament","idAlumne")->withTimestamps();
+    }
 }

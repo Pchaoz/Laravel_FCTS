@@ -12,18 +12,18 @@ class EnviamentsSeeder extends Seeder
 
     public function run()
     {
-        DB::table('enviaments')->insert([
+     /*   DB::table('enviaments')->insert([
             'estat' => 'Cursant',
             'idAlumne' => '1',
-            'idOferta'=>'1',
+            'idOfe'=>'1',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('enviaments')->insert([
             'estat' => 'Cancelada',
             'idAlumne' => '1',
-            'idOferta'=>'2',
+            'idOfe'=>'2',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-        ]);
+        ]);*/
     }
 }

@@ -21,9 +21,9 @@ class OfertesSeeder extends Seeder
             "descripcio"=>"Oferta 1 prueba",
             "idEmpresa"=>"1",
             "vacants"=>"1",
-            "idCicle"=>"SMIX",
+            "idCicle"=>"2",
             "curs"=>"2010",
-            "nomContatcte"=>"Jose Luis",
+            "nomContacte"=>"Jose Luis",
             "cognomsContacte"=>"Santiago Rodrigez",
             "correuContacte"=>"JluisSR@carpediem.net",
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
@@ -32,9 +32,9 @@ class OfertesSeeder extends Seeder
             "descripcio"=>"Oferta 2 prueba",
             "idEmpresa"=>"1",
             "vacants"=>"2007",
-            "idCicle"=>"SMIX",
+            "idCicle"=>"3",
             "curs"=>"2",
-            "nomContatcte"=>"Roberto",
+            "nomContacte"=>"Roberto",
             "cognomsContacte"=>"Santiago Gonzalez",
             "correuContacte"=>"RobertoSG@carpediem.net",
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
