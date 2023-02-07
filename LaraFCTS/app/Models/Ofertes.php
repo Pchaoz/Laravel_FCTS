@@ -10,8 +10,8 @@ class Ofertes extends Model
 {
     use HasFactory;
     protected $table = "ofertes";
-    protected $primaryKey = "idOfe";
-    protected $fillable = ['descripcio', 'idEmpresa', 'vacants', 'idCicle', 'curs', 'nomContacte', 'cognomsContacte', 'correuContacte'];
+    protected $primaryKey = "idOferta";
+    protected $fillable = ['idOferta','descripcio', 'idEmpresa', 'vacants', 'idCicle', 'curs', 'nomContacte', 'cognomsContacte', 'correuContacte'];
 
     public function alumnes(){
         return $this->belongsToMany(Ofertes::class, "enviaments","IdAlumne","idOferta")->withTimestamps();
@@ -23,6 +23,6 @@ class Ofertes extends Model
         return $this->belongsTo(Estudis::class);
     }
     public function enviaments(){
-        return $this->belongsToMany(Enviaments::class,"enviaments","idEnviament","idOfe")->withTimestamps();
+        return $this->belongsToMany(Enviaments::class,"enviaments","idEnviament","idOferta")->withTimestamps();
     }
 }
