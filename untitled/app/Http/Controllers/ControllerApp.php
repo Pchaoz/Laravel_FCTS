@@ -15,10 +15,10 @@ class ControllerApp extends Controller
 
     }
 
-    public function addEmpresa($nom/*,$adreça,$telefon,$correu*/){
+    public function addEmpresa($nom,$adreça/*,$telefon,$correu*/){
         $empresa = new Empreses();
         $empresa->nom=$nom;
-        //$empresa->adreça=$adreça;
+        $empresa->adreça=$adreça;
         //$empresa->telefon=$telefon;
         //$empresa->correu=$correu;
         $empresa->save();
