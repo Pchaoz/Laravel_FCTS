@@ -15,25 +15,31 @@ class ControllerApp extends Controller
 
     }
 
-    public function addEmpresa($nom,$adreça/*,$telefon,$correu*/){
+    public function addEmpresa($nom){
         $empresa = new Empreses();
         $empresa->nom=$nom;
-        $empresa->adreça=$adreça;
-        //$empresa->telefon=$telefon;
-        //$empresa->correu=$correu;
+        $empresa->adreça="";
+        $empresa->telefon="";
+        $empresa->correu="";
         $empresa->save();
         $empresa2 = Empreses::findOrFail($empresa->idEmpresa);
         return $empresa2->toJson();
     }
     public function oferta(){
         $oferta = Ofertes::all();
-return $oferta->toJson();
+        return $oferta->toJson();
 
-}
+    }
 
     public function addOferta($id){
         $oferta = new Ofertes();
         $oferta->idEmpresa=$id;
+        $oferta->descripcio="Por rellenar";
+        $oferta->curs="";
+        $oferta->vacants=1;
+        $oferta->nomContacte="";
+        $oferta->cognomsContacte="";
+        $oferta->correuContacte="";
         $oferta->save();
         $oferta2 = Ofertes::findOrFail($oferta->idOferta);
         return $oferta2->toJson();
