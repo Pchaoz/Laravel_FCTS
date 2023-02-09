@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/empresa/',[ControllerApp::class,'empresa']);
 
 //afegir una empresa
-Route::get('/empresa/add/{nomEmpresa}',[ControllerApp::class,'addEmpresa']);
+Route::post('/empresa/add/{nomEmpresa}',[ControllerApp::class,'addEmpresa']);
 
 //mostrar ofertes
 Route::get('/empresa/oferta/',[ControllerApp::class,'oferta']);
