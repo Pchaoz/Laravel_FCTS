@@ -21,7 +21,5 @@ class Ofertes extends Model
     public function estudis(){
         return $this->belongsTo(Estudis::class);
     }
-    public function enviaments(){
-        return $this->belongsToMany(Enviaments::class,"enviaments","idEnviament","idOferta")->withTimestamps();
-    }
+
 }
