@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('coordinador')->default(false);
-            $table->string('grup',20);
+            $table->string('grup',20)->default("");
+            $table->string('role', 20)->default("alumne");
             $table->rememberToken();
             $table->timestamps();
         });

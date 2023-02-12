@@ -1,7 +1,7 @@
 <?php
-
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersSeeder::class);
-        $this->call(EmpresesSeeder::class);
-        $this->call(EstudisSeeder::class);
-        $this->call(AlumnesSeeder::class);
-        $this->call(OfertesSeeder::class);
-        $this->call(EnviamentsSeeder::class);
+        //$this->call([UsersTableSeeder::class]);
+        $this->call([UsersSeeder::class]);
+        $this->call([AlumnesSeeder::class]);
+        $this->call([EstudisSeeder::class]);
+        $this->call([EmpresesSeeder::class]);
+        $this->call([OfertesSeeder::class]);
+        $this->call([EnviamentsSeeder::class]);
     }
 }
