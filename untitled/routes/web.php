@@ -55,6 +55,9 @@ Route::get('/empresa/edit/{idEmpresa}',[ControllerApp::class,'editaEmpresa']);
 Route::post('/novesDadesEmpresa',[ControllerApp::class,'cambiarDadesEmpresa']);
 
 
+Route::get('/alumne/edit', [ControllerApp::class, 'formAlumne']);
+Route::post('/alumne/edit', [ControllerApp::class, 'editAlumne']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

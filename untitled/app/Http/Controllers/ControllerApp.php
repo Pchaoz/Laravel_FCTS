@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Alumnes;
 use App\Models\Empreses;
 use App\Models\Ofertes;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class ControllerApp extends Controller
 {
@@ -96,8 +98,25 @@ class ControllerApp extends Controller
         return $oferta->toJson();
 
     }
+    //TODO pillarlo de un formulario con todos los alumnos
+    // en el cual pases la id como con el del Raul
+    public function formAlumne() {
+        return view('editAlumne');
+    }
+    public function editAlumne(Request $request) {
 
+        $alumne = Alumnes::findOrFail(1);
 
+        $alumne->nomAlumne=$request->nom;
+        $alumne->CognomAlumne=$request->cognom;
+        $alumne->Telefon=$request->telefon;
+        $alumne->Correu=$request->correu;
+        $alumne->DNI=$request->dni;
+        $alumne->Curs=$request->curs;
+        //DD($alumne);
+        $alumne->save();
+        return redirect('/home');
+    }
 
 
 }
