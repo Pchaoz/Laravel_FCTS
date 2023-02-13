@@ -71,5 +71,16 @@ class ControllerApp extends Controller
 
     }
 
+    public function restaVacants($idOferta,$numVacants){
+        $oferta= Ofertes::findOrFail($idOferta);
+        $oferta->vacants-=$numVacants;
+        $oferta->save();
+        $oferta= Ofertes::findOrFail($idOferta);
+        return $oferta->toJson();
+
+    }
+
+
+
 
 }

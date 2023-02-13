@@ -32,5 +32,7 @@ class OfertesSeeder extends Seeder
             "correuContacte"=>"RobertoSG@carpediem.net",
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
+
+
     }
 }

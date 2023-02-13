@@ -46,6 +46,9 @@ Route::get('/alumne/add/',[ControllerApp::class,'addAlumne']);
 //modificar estat enviament
 Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::class,'modEstatEnviament']);
 
+//Modificar vacants ofertes
+Route::get('/empresa/tutor/oferta/{idOferta}/{numVacants}',[ControllerApp::class,'restaVacants']);
+
 
 Auth::routes();
 
