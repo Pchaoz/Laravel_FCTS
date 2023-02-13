@@ -1,7 +1,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <!--<title>Empreses</title>-->
     </head>
     <body>
         @extends('layouts.app')

@@ -39,6 +39,8 @@ Route::get('/empresa/oferta/',[ControllerApp::class,'oferta']);
 
 //afegir oferta
 Route::get('/empresa/oferta/add/{idEmpresa}',[ControllerApp::class,'addOferta']);
+//afegir empresa desde la vista
+Route::get('/empresa/oferta/VistaAdd/',[ControllerApp::class,'addOfertaVista']);
 
 //afegir alumne(le falta algo de testeo para que funcione)
 Route::get('/alumne/add/',[ControllerApp::class,'addAlumne']);

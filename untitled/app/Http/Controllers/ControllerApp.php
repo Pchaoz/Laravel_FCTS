@@ -12,18 +12,16 @@ class ControllerApp extends Controller
     public function empresa(){
         $empreses = Empreses::all();
         return view('empresas', compact('empreses'));
-        //return $empreses->toJson();
     }
 
     public function editaEmpresa($idEmpresa){
         $empresa = Empreses::findOrFail($idEmpresa);
         return view('editarempresa', compact('empresa'));
-
     }
 
+
+
     public function cambiarDadesEmpresa(Request $request){
-
-
         $empresa= Empreses::findOrFail($request->id);
         $empresa->nom=$request->nom;
         $empresa->adreça=$request->adreça;
@@ -47,9 +45,8 @@ class ControllerApp extends Controller
         return $empresa2->toJson();
     }
     public function oferta(){
-        $oferta = Ofertes::all();
-        return $oferta->toJson();
-
+        $ofertes = Ofertes::all();
+        return view('ofertes', compact('ofertes'));
     }
 
     public function addOferta($id){
@@ -65,6 +62,10 @@ class ControllerApp extends Controller
         $oferta2 = Ofertes::findOrFail($oferta->idOferta);
         return $oferta2->toJson();
     }
+    public function addOfertaVista(){
+        return view('afegirOferta');
+    }
+
 
     public function addAlumne(){
         $alumne = new Alumnes();
