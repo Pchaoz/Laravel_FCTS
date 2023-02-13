@@ -18,9 +18,9 @@ Route::get('/', function () {
     $user = Auth::user();
     if($user != null) {
         if(!$user->coordinador) {
-            return "Hola soc un tutor";
+            return view('enviaments');
         } else {
-            return "Hola soc un coordinador";
+            return view('enviaments');
         }
     } else {
         return view('auth.login');
@@ -49,6 +49,11 @@ Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::cla
 //Modificar vacants ofertes
 Route::get('/empresa/tutor/oferta/{idOferta}/{numVacants}',[ControllerApp::class,'restaVacants']);
 
+//Mostrar enviament del tutor
+Route::get('/enviaments/{idtutor}',[ControllerApp::class,'enviamentsTutor']);
+
+//Mostrar tots els enviaments
+Route::get('/enviaments/',[ControllerApp::class,'enviaments']);
 
 Auth::routes();
 

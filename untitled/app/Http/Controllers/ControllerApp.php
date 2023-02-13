@@ -80,6 +80,16 @@ class ControllerApp extends Controller
 
     }
 
+    public function enviamentsTutor($idTutor){
+        $enviaments = Enviaments::findOrFail($idTutor);
+        return $enviaments->toJson();
+    }
+
+    public function enviaments(){
+        $enviaments = Enviaments::all();
+        return $enviaments->toJson();
+    }
+
 
 
 
