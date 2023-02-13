@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('coordinador')->default(false);
             $table->string('grup',20)->default("");
-            $table->string('role', 20)->default("alumne");
             $table->rememberToken();
             $table->timestamps();
         });

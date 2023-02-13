@@ -23,7 +23,6 @@ class User extends Authenticatable
         'password',
         'coordinador',
         'grup',
-        'role'
     ];
 
     /**

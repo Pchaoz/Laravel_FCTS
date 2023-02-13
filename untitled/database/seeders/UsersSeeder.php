@@ -15,7 +15,6 @@ class UsersSeeder extends Seeder
             "email"=>"eliov@gmail.com",
             "password"=>bcrypt("luz"),
             "grup"=>"1r Iluminatti",
-            'role'=>'tutor',
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -24,7 +23,7 @@ class UsersSeeder extends Seeder
             'email' => 'admin@lightbp.com',
             'password' => bcrypt("admin"),
             'grup'=> "1r Iluminatti",
-            'role'=> 'coordinador',
+            'coordinador'=> true,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
     }

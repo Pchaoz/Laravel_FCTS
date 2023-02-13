@@ -11,8 +11,12 @@ class ControllerApp extends Controller
 {
     public function empresa(){
         $empreses = Empreses::all();
-    return $empreses->toJson();
+        return view('empresas', compact('empreses'));
+        //return $empreses->toJson();
+    }
 
+    public function editarEmpresa(){
+        return view('editarempresa');
     }
 
     public function addEmpresa($nom){

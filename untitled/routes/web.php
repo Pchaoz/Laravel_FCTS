@@ -17,12 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $user = Auth::user();
     if($user != null) {
-        if($user.role == "tutor") {
+        if(!$user->coordinador) {
             return "Hola soc un tutor";
-        } else if ($user.role == "coordinador") {
+        } else {
             return "Hola soc un coordinador";
-        } else if ($user.role == "alumne") {
-            return "Hola soc un alumne";
         }
     } else {
         return view('auth.login');
