@@ -40,7 +40,11 @@ Route::get('/empresa/oferta/',[ControllerApp::class,'oferta']);
 //afegir oferta
 Route::get('/empresa/oferta/add/{idEmpresa}',[ControllerApp::class,'addOferta']);
 
+//afegir alumne(le falta algo de testeo para que funcione)
+Route::get('/alumne/add/',[ControllerApp::class,'addAlumne']);
 
+//modificar estat enviament
+Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::class,'modEstatEnviament']);
 
 
 Auth::routes();
