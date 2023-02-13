@@ -45,4 +45,27 @@ class ControllerApp extends Controller
         return $oferta2->toJson();
     }
 
+    public function addAlumne(){
+        $alumne = new Alumnes();
+        $alumne->nomAlumne="";
+        $alumne->CognomAlumne="";
+        $alumne->DNI="";
+        $alumne->Telefon="";
+        $alumne->Curs="";
+        $alumne->correu="";
+        $alumne->save();
+        $alumne2 = Alumnes::findOrFail($alumne->idAlumne);
+        return $alumne2->toJson();
+    }
+
+    public function modEstatEnviament($idEnviament,$nouEstat){
+        $enviament= Enviaments::findOrFail($idEnviament);
+        $enviament->estat=$nouEstat;
+        $enviament->save();
+        $enviament= Enviaments::findOrFail($idEnviament);
+        return $enviament->toJson();
+
+    }
+
+
 }
