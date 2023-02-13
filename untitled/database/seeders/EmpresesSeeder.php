@@ -19,7 +19,7 @@ class EmpresesSeeder extends Seeder
             'nom' => 'Xiaomi',
             'adreça' => "Avinguda de la Granvia de l’Hospitalet, 75, 08908 L'Hospitalet de Llobregat, Barcelona",
             'telefon' => '+34931783992',
-            'correu' => '+service.us@support.mi.com',
+            'correu' => 'service.us@support.mi.com',
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }

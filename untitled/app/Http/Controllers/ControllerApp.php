@@ -15,9 +15,26 @@ class ControllerApp extends Controller
         //return $empreses->toJson();
     }
 
-    public function editarEmpresa(){
-        return view('editarempresa');
+    public function editaEmpresa($idEmpresa){
+        $empresa = Empreses::findOrFail($idEmpresa);
+        return view('editarempresa', compact('empresa'));
+
     }
+
+    public function cambiarDadesEmpresa(Request $request){
+
+
+        $empresa= Empreses::findOrFail($request->id);
+        $empresa->nom=$request->nom;
+        $empresa->adreça=$request->adreça;
+        $empresa->telefon=$request->telefon;
+        $empresa->correu=$request->correu;
+        $empresa->save();
+        //$empresa2 = Empreses::findOrFail($empresa->idEmpresa);
+        //return $empresa2->toJson();
+        return redirect('/empresa');
+    }
+
 
     public function addEmpresa($nom){
         $empresa = new Empreses();

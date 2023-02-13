@@ -4,16 +4,16 @@
         <!--<title>Empreses</title>-->
     </head>
     <body>
-        @extends('layouts.app', ['activePage' => 'empresas', 'title' => 'Empreses', 'navName' => 'Empreses', 'activeButton' => 'laravel'])
+        @extends('layouts.app')
         @section("content")
         <div class="container">
             <h1>Llistat empreses</h1>
             <ul>
                 @foreach($empreses as $empresa)
                     <li>Nom: {{$empresa->nom}} | Adreça: {{$empresa->adreça}}
-                    {!! Form::open(['url' => 'empresas']) !!}
-                    <button type="submit" class="btn btn-danger">Editar</button></li>
-                    {!! Form::submit('editarEmpresa') !!}
+                        <a href="/empresa/edit/{{$empresa->idEmpresa}}" class="btn btn-dark">Editar</a>
+                    </li>
+
                 @endforeach
             </ul>
         </div>

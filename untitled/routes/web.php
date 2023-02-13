@@ -49,6 +49,11 @@ Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::cla
 //Modificar vacants ofertes
 Route::get('/empresa/tutor/oferta/{idOferta}/{numVacants}',[ControllerApp::class,'restaVacants']);
 
+//ruta de edicion de empresas
+Route::get('/empresa/edit/{idEmpresa}',[ControllerApp::class,'editaEmpresa']);
+//post de esa edicion
+Route::post('/novesDadesEmpresa',[ControllerApp::class,'cambiarDadesEmpresa']);
+
 
 Auth::routes();
 
