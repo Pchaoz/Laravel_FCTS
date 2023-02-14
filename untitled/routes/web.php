@@ -17,16 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $user = Auth::user();
     if($user != null) {
-        if(!$user->coordinador) {
-            return "Hola soc un tutor";
-        } else {
-            return "Hola soc un coordinador";
-        }
+        return redirect()->route('enviaments');
     } else {
         return view('auth.login');
     }
 });
-
 
 //mostrar empreses
 Route::get('/empresa/',[ControllerApp::class,'empresa']);
@@ -58,6 +53,8 @@ Route::get('/empresa/edit/{idEmpresa}',[ControllerApp::class,'editaEmpresa']);
 //post de esa edicion
 Route::post('/novesDadesEmpresa',[ControllerApp::class,'cambiarDadesEmpresa']);
 
+//Mostrar tots els enviaments
+Route::get('/enviaments/',[ControllerApp::class,'enviaments'])->name('enviaments');
 
 Auth::routes();
 

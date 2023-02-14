@@ -19,6 +19,8 @@ class CreateEnviamentsTable extends Migration
             $table->string("estat",30);
             $table->foreignId('idAlumne')->nullable()->constrained('alumnes')->references('idAlumne');
             $table->foreignId('idOferta')->nullable()->constrained('ofertes')->references('idOferta');
+            $table->string("observacions", 150)->nullable();
+            $table->foreignId('creatPer')->default(1)->constrained('users')->references('idUser');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Empreses;
 use App\Models\Ofertes;
+use App\Models\Enviaments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -122,6 +123,17 @@ class ControllerApp extends Controller
         $oferta= Ofertes::findOrFail($idOferta);
         return $oferta->toJson();
 
+    }
+
+    public function enviamentsTutor($idTutor){
+        $enviamentsTutor = Enviaments::findOrFail($idTutor);
+        return $enviamentsTutor->toJson();
+    }
+
+    public function enviaments(){
+        $enviaments = Enviaments::all();
+        return view('enviaments', compact('enviaments'));
+        //return $enviaments->toJson();
     }
 
 

@@ -10,5 +10,9 @@ class Enviaments extends Model
     use HasFactory;
     protected  $table="enviaments";
     protected  $primaryKey="idEnviaments";
-    protected  $fillable =["idEnviaments","estat"];
+    protected  $fillable =["idEnviaments","estat","observacions","creatPer"];
+
+    public function usuari(){
+        return $this->BelongsTo(User::class,'idUser','creatPer');
+    }
 }
