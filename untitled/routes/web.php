@@ -17,16 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $user = Auth::user();
     if($user != null) {
-        if(!$user->coordinador) {
-            return view('enviaments');
+        return redirect()->route('enviaments');
+        /*if($user->coordinador) {
+            return redirect()->route('enviaments');
         } else {
-            return view('enviaments');
-        }
+            return redirect()->route('enviamentsTutor', ['idtutor' => $user->idUser]);
+        }*/
     } else {
         return view('auth.login');
     }
 });
-
 
 //mostrar empreses
 Route::get('/empresa/',[ControllerApp::class,'empresa']);
@@ -50,10 +50,10 @@ Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::cla
 Route::get('/empresa/tutor/oferta/{idOferta}/{numVacants}',[ControllerApp::class,'restaVacants']);
 
 //Mostrar enviament del tutor
-Route::get('/enviaments/{idtutor}',[ControllerApp::class,'enviamentsTutor']);
+Route::get('/enviaments/{idtutor}',[ControllerApp::class,'enviamentsTutor'])->name('enviamentsTutor');
 
 //Mostrar tots els enviaments
-Route::get('/enviaments/',[ControllerApp::class,'enviaments']);
+Route::get('/enviaments/',[ControllerApp::class,'enviaments'])->name('enviaments');
 
 Auth::routes();
 

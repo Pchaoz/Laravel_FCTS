@@ -21,8 +21,10 @@
             <h1>Els teus enviaments</h1>
             <ul>
                 @foreach($enviaments as $enviament)
+                    @if($enviament->creatPer == Auth::user()->idUser)
                     <li>ID Enviament: {{$enviament->idEnviaments}} | Estat: {{$enviament->estat}} | Alumne: {{$enviament->idAlumne}} | Oferta: {{$enviament->idOferta}}}}
                         <a href="/" class="btn btn-danger">Editar</a></li>
+                    @endif
                 @endforeach
             </ul>
         </div>

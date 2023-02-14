@@ -19,6 +19,7 @@ class EnviamentsSeeder extends Seeder
             'estat' => 'Cursant',
             'idAlumne' => '1',
             'idOferta'=>'1',
+            'creatPer'=>'1',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
@@ -26,6 +27,7 @@ class EnviamentsSeeder extends Seeder
             'estat' => 'Cancelada',
             'idAlumne' => '1',
             'idOferta'=>'2',
+            'creatPer'=>'1',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
     }

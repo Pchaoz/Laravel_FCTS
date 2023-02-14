@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Empreses;
 use App\Models\Ofertes;
+use App\Models\Enviaments;
 use Illuminate\Http\Request;
 
 class ControllerApp extends Controller
@@ -81,8 +82,8 @@ class ControllerApp extends Controller
     }
 
     public function enviamentsTutor($idTutor){
-        $enviaments = Enviaments::findOrFail($idTutor);
-        return $enviaments->toJson();
+        $enviamentsTutor = Enviaments::findOrFail($idTutor);
+        return $enviamentsTutor->toJson();
     }
 
     public function enviaments(){
