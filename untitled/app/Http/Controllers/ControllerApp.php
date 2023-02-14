@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Empreses;
 use App\Models\Ofertes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ControllerApp extends Controller
 {
@@ -15,8 +16,14 @@ class ControllerApp extends Controller
     }
 
     public function editaEmpresa($idEmpresa){
-        $empresa = Empreses::findOrFail($idEmpresa);
-        return view('editarempresa', compact('empresa'));
+        $user = Auth::user();
+        if(!$user->coordinador) {
+            return "No ets coordinador!";
+        }else {
+            $empresa = Empreses::findOrFail($idEmpresa);
+            return view('editarempresa', compact('empresa'));
+        }
+       
     }
 
 
@@ -63,7 +70,12 @@ class ControllerApp extends Controller
         return $oferta2->toJson();
     }
     public function addOfertaVista(){
-        return view('afegirOferta');
+        $user = Auth::user();
+        if(!$user->coordinador) {
+            return "No ets coordinador!";
+        }else {
+            return view('afegirOferta');
+        }
     }
 
     public function afegirOfertaVista(Request $request){
