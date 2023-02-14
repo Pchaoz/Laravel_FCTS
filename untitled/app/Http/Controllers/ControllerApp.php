@@ -8,7 +8,7 @@ use App\Models\Ofertes;
 use App\Models\Enviaments;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class ControllerApp extends Controller
 {
@@ -25,7 +25,7 @@ class ControllerApp extends Controller
             $empresa = Empreses::findOrFail($idEmpresa);
             return view('editarempresa', compact('empresa'));
         }
-       
+
     }
 
 
