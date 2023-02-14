@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Empreses;
 use App\Models\Ofertes;
 use App\Models\Enviaments;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -132,7 +133,8 @@ class ControllerApp extends Controller
 
     public function enviaments(){
         $enviaments = Enviaments::all();
-        return view('enviaments', compact('enviaments'));
+        $user = Auth::user();
+        return view('enviaments', compact('enviaments','user'));
         //return $enviaments->toJson();
     }
 
