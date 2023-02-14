@@ -106,13 +106,13 @@ class ControllerApp extends Controller
     public function editAlumne(Request $request) {
 
         $alumne = Alumnes::findOrFail(1);
-
+        //DD($alumne);
         $alumne->nomAlumne=$request->nom;
         $alumne->CognomAlumne=$request->cognom;
         $alumne->Telefon=$request->telefon;
         $alumne->Correu=$request->correu;
         $alumne->DNI=$request->dni;
-        $alumne->Curs=$request->curs;
+        $alumne->Curs=(int) $request->curs;
         //DD($alumne);
         $alumne->save();
         return redirect('/home');
