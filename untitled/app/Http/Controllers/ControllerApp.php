@@ -66,6 +66,20 @@ class ControllerApp extends Controller
         return view('afegirOferta');
     }
 
+    public function afegirOfertaVista(Request $request){
+        $oferta = new Ofertes();
+        $oferta->descripcio=$request->desc;
+        $oferta->vacants=$request->vac;
+        $oferta->curs=$request->curs;
+        $oferta->nomContacte=$request->nomCont;
+        $oferta->cognomsContacte=$request->cogCont;
+        $oferta->correuContacte=$request->correuCont;
+        $oferta->idEmpresa=$request->idEmp;
+        $oferta->idCicle=$request->idCicle;
+        $oferta->save();
+        return redirect('/empresa/oferta');
+    }
+
 
     public function addAlumne(){
         $alumne = new Alumnes();
