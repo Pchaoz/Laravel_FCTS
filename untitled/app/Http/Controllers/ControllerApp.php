@@ -88,7 +88,8 @@ class ControllerApp extends Controller
 
     public function enviaments(){
         $enviaments = Enviaments::all();
-        return $enviaments->toJson();
+        return view('enviaments', compact('enviaments'));
+        //return $enviaments->toJson();
     }
 
 
