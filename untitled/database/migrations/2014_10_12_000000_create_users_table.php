@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('coordinador')->default(false);
-            $table->string('grup',20)->default("");
+            $table->integer('grup')->nullable()->constrained('estudis')->references('idEstudi');
             $table->rememberToken();
             $table->timestamps();
         });

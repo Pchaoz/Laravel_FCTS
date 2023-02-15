@@ -9,12 +9,14 @@
             <h1>Llistat empreses</h1>
             <ul>
                 @foreach($empreses as $empresa)
-                    <li>Nom: {{$empresa->nom}} | Adreça: {{$empresa->adreça}}
-                        <a href="/empresa/edit/{{$empresa->idEmpresa}}" class="btn btn-dark">Editar</a>
+                    <li>Nom: {{$empresa->nom}} || Adreça: {{$empresa->adreça}}
+                        <a href="/empresa/edit/{{$empresa->idEmpresa}}" class="btn btn-danger">Editar</a>
                     </li>
-
                 @endforeach
             </ul>
+        </div>
+        <div class="container">
+            <a href="/empresa/add" class="btn btn-danger">Afegir Empresa</a>
         </div>
         @endsection
     </body>

@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Alumnes extends Model
 {
     use HasFactory;
-    protected $table = 'alumnes.blade.php';
+    protected $table = 'alumnes';
     protected $primaryKey = 'IdAlumne';
-    protected $fillable=['IdAlumne','NomAlumne','CognomAlumne','DNI','Curs','Cicle','Telefon','Correu','IdTutor','IsPractiques','RutaCurriculum'];
+    protected $fillable=['IdAlumne','NomAlumne','CognomAlumne','DNI','Curs','Cicle','Telefon','Correu','IdTutor','IsPractiques','CV'];
 
     public function ofertes(){
         return $this->belongsToMany(Ofertes::class, "enviaments","idOferta","IdAlumne")->withTimestamps();

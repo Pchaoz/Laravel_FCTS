@@ -17,7 +17,7 @@ class CreateEnviamentsTable extends Migration
         Schema::create('enviaments', function (Blueprint $table) {
             $table->bigIncrements("idEnviaments");
             $table->string("estat",30);
-            $table->foreignId('idAlumne')->nullable()->constrained('alumnes.blade.php')->references('idAlumne');
+            $table->foreignId('idAlumne')->nullable()->constrained('alumnes')->references('idAlumne');
             $table->foreignId('idOferta')->nullable()->constrained('ofertes')->references('idOferta');
             $table->string("observacions", 150)->nullable();
             $table->foreignId('creatPer')->default(1)->constrained('users')->references('idUser');

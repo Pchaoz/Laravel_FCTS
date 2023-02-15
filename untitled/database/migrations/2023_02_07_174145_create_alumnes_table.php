@@ -13,7 +13,7 @@ class CreateAlumnesTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumnes.blade.php', function (Blueprint $table) {
+        Schema::create('alumnes', function (Blueprint $table) {
             $table->bigIncrements('idAlumne');
             $table->string('nomAlumne', 30);
             $table->string('CognomAlumne', 50);
@@ -24,6 +24,7 @@ class CreateAlumnesTable extends Migration
             $table->boolean('IsPractiques')->nullable();
             $table->integer('idTutor')->nullable()->constrained('users')->references('id');
             $table->integer('Cicle')->nullable()->constrained('estudis')->references('idEstudi');
+            $table->string('CV', 100)->nullable();
             $table->timestamps();
 
 

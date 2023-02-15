@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function enviaments(){
         return $this->hasMany(Enviaments::class);
     }
+
+    public function estudis(){
+        return $this->BelongsTo(Estudis::class,'IdEstudi','grup');
+    }
 }

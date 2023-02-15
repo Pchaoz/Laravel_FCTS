@@ -12,9 +12,9 @@ class UsersSeeder extends Seeder
     {
         DB::table("users")->insert([
             "name"=>"Eloi Vazquez",
-            "email"=>"eliov@gmail.com",
+            "email"=>"eloiv@gmail.com",
             "password"=>bcrypt("luz"),
-            "grup"=>"1r Iluminatti",
+            "grup"=> 1,
             'created_at'=> Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
             'name' => 'Admin Admin',
             'email' => 'admin@lightbp.com',
             'password' => bcrypt("admin"),
-            'grup'=> "1r Iluminatti",
+            'grup'=> 1,
             'coordinador'=> true,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);

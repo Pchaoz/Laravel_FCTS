@@ -36,11 +36,15 @@ Route::get('/empresa/oferta/',[ControllerApp::class,'oferta']);
 Route::get('/empresa/oferta/add/{idEmpresa}',[ControllerApp::class,'addOferta']);
 //afegir oferta desde la vista
 Route::get('/empresa/oferta/VistaAdd/',[ControllerApp::class,'addOfertaVista']);
+//Formulari edit oferta
+Route::get('/empresa/oferta/edit/{idAlumne}', [ControllerApp::class,'editaroferta']);
+//Acció edit oferta
+Route::post('/empresa/oferta/edit', [ControllerApp::class,'editarofertapost']);
 //post de la oferta desde la vista
 Route::post('/novaOferta',[ControllerApp::class,'afegirOfertaVista']);
 
 //afegir alumne(le falta algo de testeo para que funcione)
-Route::get('/alumne/add/',[ControllerApp::class,'addAlumne']);
+//Route::get('/alumne/add/',[ControllerApp::class,'addAlumne']);
 
 //modificar estat enviament
 Route::get('/oferta/enviar/canviEstat/{idEnviament}/{Estat}',[ControllerApp::class,'modEstatEnviament']);
@@ -57,14 +61,28 @@ Route::post('/novesDadesEmpresa',[ControllerApp::class,'cambiarDadesEmpresa']);
 Route::get('/enviaments/',[ControllerApp::class,'enviaments'])->name('enviaments');
 
 //Mostrar tots els alumnes
-Route::get('/alumnes/',[ControllerApp::class,'getalumnes']);
+Route::get('/alumnes/',[ControllerApp::class,'getalumnes'])->name('alumnes');
 
 //Formulari agregar alumne
-Route::get('/afegiralumne/', function(){
-   return view('afegiralumne');
-});
+Route::get('/alumne/add', [ControllerApp::class,'afegiralumne']);
 //Acció afegir alumne
-Route::post('/afegiralumne/', [ControllerApp::class,'afegiralumne']);
+Route::post('/alumne/add', [ControllerApp::class,'afegiralumnepost']);
+
+//Formulari edit alumne
+Route::get('/alumne/edit/{idAlumne}', [ControllerApp::class,'editaralumne']);
+//Acció afegir alumne
+Route::post('/alumne/edit', [ControllerApp::class,'editaralumnepost']);
+
+//Formulari afegir una empresa
+Route::get('/empresa/add',[ControllerApp::class,'afegirempresa']);
+//accio afegir una empresa
+Route::post('/empresa/add',[ControllerApp::class,'afegirempresapost']);
+
+
+//Formulari editar fitxa
+Route::get('/fitxa',[ControllerApp::class,'editarfitxa']);
+//accio editar fitxa
+Route::post('/fitxa',[ControllerApp::class,'editarfitxapost']);
 
 Auth::routes();
 

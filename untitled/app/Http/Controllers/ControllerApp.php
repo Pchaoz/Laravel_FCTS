@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Empreses;
 use App\Models\Ofertes;
+use App\Models\Alumnes;
+use App\Models\Estudis;
 use App\Models\Enviaments;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class ControllerApp extends Controller
@@ -144,7 +147,131 @@ class ControllerApp extends Controller
         return view('alumnes', compact('alumnes', 'user'));
     }
 
+    public function afegiralumne(){
+        $user = Auth::user();
+        $estudis = Estudis::all();
+        return view('afegiralumne', compact('user','estudis'));
+    }
 
+    public function afegiralumnepost(Request $request){
 
+        $user = Auth::user();
 
+        /*$request->validate([
+            //el campo file es obligatorio, debe ser extension pdf xlx o csv, tamaño maximo 2MB
+            'file' => 'required|mimes:pdf|max:2048',
+        ]);
+
+        //nombre del fichero sacado a aprtir del time
+        $fileName = 'cvalumne'.$request->id.'.'.$request->cv->extension();
+
+        $request->cv->move(public_path('uploads'), $fileName);*/
+
+        $alumne = new Alumnes();
+        $alumne->nomAlumne=$request->nom;
+        $alumne->CognomAlumne=$request->cognom;
+        $alumne->DNI=$request->dni;
+        $alumne->Curs=$request->curs;
+        $alumne->Cicle=$request->cicle;
+        $alumne->Telefon=$request->telefon;
+        $alumne->Correu=$request->correu;
+        $alumne->CognomAlumne=$request->cognom;
+        //$alumne->CV=$fileName;
+        $alumne->save();
+        return redirect('/alumnes/');
+    }
+
+    public function editaralumne($idAlumne){
+        $user = Auth::user();
+        $estudis = Estudis::all();
+        $alumne = Alumnes::findOrFail($idAlumne);
+        return view('editaralumnes', compact('alumne','user','estudis'));
+    }
+
+    public function editaralumnepost(Request $request){
+        /*$request->validate([
+            //el campo file es obligatorio, debe ser extension pdf xlx o csv, tamaño maximo 2MB
+            'file' => 'required|mimes:pdf|max:2048',
+        ]);*/
+
+        //nombre del fichero
+        //$fileName = 'cvalumne'.$request->id.'.'.$request->cv->extension();
+
+        //$request->cv->move(public_path('uploads'), $fileName);
+
+        $alumne= Alumnes::findOrFail($request->id);
+        $alumne->nomAlumne=$request->nom;
+        $alumne->CognomAlumne=$request->cognom;
+        $alumne->DNI=$request->dni;
+        $alumne->Curs=$request->curs;
+        $alumne->Cicle=$request->cicle;
+        $alumne->Telefon=$request->telefon;
+        $alumne->Correu=$request->correu;
+        $alumne->CognomAlumne=$request->cognom;
+        //$alumne->CV=$fileName;
+        $alumne->save();
+        return redirect('/alumnes');
+
+    }
+
+    public function afegirempresa(){
+        $user = Auth::user();
+        if(!$user->coordinador) {
+            return "No ets coordinador!";
+        }else {
+            return view('afegirempresa', compact('user'));
+        }
+    }
+
+    public function afegirempresapost(Request $request){
+        $empresa = new Empreses();
+        $empresa->nom=$request->nom;
+        $empresa->adreça=$request->adresa;
+        $empresa->telefon=$request->telefon;
+        $empresa->correu=$request->correu;
+        $empresa->save();
+        return redirect('/empresa/');
+    }
+
+    public function editarfitxa(){
+        $user = Auth::user();
+        $estudis = Estudis::all();
+        return view('fitxausuari', compact('user','estudis'));
+    }
+
+    public function editarfitxapost(Request $request){
+
+        $user = Auth::user();
+        $user->name=$request->nom;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->grup=$request->grup;
+        $user->save();
+        return redirect('/fitxa');
+
+    }
+
+    public function editaroferta($idOferta){
+        $user = Auth::user();
+        $empreses = Empreses::all();
+        $estudis = Estudis::all();
+        $oferta = Ofertes::findOrFail($idOferta);
+        return view('editaroferta', compact('user','estudis','oferta','empreses'));
+    }
+
+    public function editarofertapost(Request $request){
+
+        $oferta = Ofertes::findOrFail($request->id);
+        $oferta->descripcio=$request->descripcio;
+        $oferta->vacants=$request->vacants;
+        $oferta->curs=$request->curs;
+        $oferta->nomContacte=$request->nomcontacte;
+        $oferta->cognomsContacte=$request->cognomscontacte;
+        $oferta->correuContacte=$request->correucontacte;
+        $oferta->idEmpresa=$request->empresa;
+        $oferta->idCicle=$request->cicle;
+        $oferta->save();
+        return redirect('/empresa/oferta');
+
+    }
 }
