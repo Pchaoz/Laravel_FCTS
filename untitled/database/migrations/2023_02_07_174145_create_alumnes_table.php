@@ -13,7 +13,7 @@ class CreateAlumnesTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumnes', function (Blueprint $table) {
+        Schema::create('alumnes.blade.php', function (Blueprint $table) {
             $table->bigIncrements('idAlumne');
             $table->string('nomAlumne', 30);
             $table->string('CognomAlumne', 50);
@@ -38,6 +38,6 @@ class CreateAlumnesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnes');
+        Schema::dropIfExists('alumnes.blade.php');
     }
 }

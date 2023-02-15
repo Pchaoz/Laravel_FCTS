@@ -56,6 +56,16 @@ Route::post('/novesDadesEmpresa',[ControllerApp::class,'cambiarDadesEmpresa']);
 //Mostrar tots els enviaments
 Route::get('/enviaments/',[ControllerApp::class,'enviaments'])->name('enviaments');
 
+//Mostrar tots els alumnes
+Route::get('/alumnes/',[ControllerApp::class,'getalumnes']);
+
+//Formulari agregar alumne
+Route::get('/afegiralumne/', function(){
+   return view('afegiralumne');
+});
+//Acció afegir alumne
+Route::post('/afegiralumne/', [ControllerApp::class,'afegiralumne']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -138,6 +138,12 @@ class ControllerApp extends Controller
         //return $enviaments->toJson();
     }
 
+    public function getalumnes(){
+        $alumnes = Alumnes::all();
+        $user = Auth::user();
+        return view('alumnes', compact('alumnes', 'user'));
+    }
+
 
 
 
